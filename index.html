@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora accesible para personas con discapacidad visual con soporte de voz y braille.">
+
+    <title>Calculadora Accesible</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="contenedor-principal">
+
+        <h1>Calculadora Accesible</h1>
+
+        <div class="calculadora" role="application" aria-label="Calculadora accesible">
+
+            <!-- Pantalla -->
+            <div class="pantalla">
+
+                <label for="pantalla" class="etiqueta-pantalla">
+                    Resultado
+                </label>
+
+                <input
+                    type="text"
+                    id="pantalla"
+                    class="entrada-pantalla"
+                    readonly
+                    value="0"
+                    aria-live="polite">
+
+                <div id="operacion" class="info-operacion">
+                    0
+                </div>
+
+            </div>
+
+            <!-- Botones -->
+            <fieldset class="botones">
+
+                <legend class="sr-only">
+                    Controles de calculadora
+                </legend>
+
+                <button class="btn btn-funcion" onclick="limpiar()">
+                    <span class="braille">⠉</span>C
+                </button>
+
+                <button class="btn btn-funcion" onclick="eliminarNumero()">
+                    <span class="braille">⠃</span>⌫
+                </button>
+
+                <button class="btn btn-operador" onclick="agregarOperador('%')">
+                    <span class="braille">⠨</span>%
+                </button>
+
+                <button class="btn btn-operador" onclick="agregarOperador('/')">
+                    <span class="braille">⠌</span>÷
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('7')">
+                    <span class="braille">⠛</span>7
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('8')">
+                    <span class="braille">⠓</span>8
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('9')">
+                    <span class="braille">⠊</span>9
+                </button>
+
+                <button class="btn btn-operador" onclick="agregarOperador('*')">
+                    <span class="braille">⠡</span>×
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('4')">
+                    <span class="braille">⠙</span>4
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('5')">
+                    <span class="braille">⠑</span>5
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('6')">
+                    <span class="braille">⠋</span>6
+                </button>
+
+                <button class="btn btn-operador" onclick="agregarOperador('-')">
+                    <span class="braille">⠤</span>−
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('1')">
+                    <span class="braille">⠁</span>1
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('2')">
+                    <span class="braille">⠃</span>2
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('3')">
+                    <span class="braille">⠉</span>3
+                </button>
+
+                <button class="btn btn-operador" onclick="agregarOperador('+')">
+                    <span class="braille">⠖</span>+
+                </button>
+
+                <button class="btn btn-numero btn-cero" onclick="agregarNumero('0')">
+                    <span class="braille">⠚</span>0
+                </button>
+
+                <button class="btn btn-numero" onclick="agregarNumero('.')">
+                    <span class="braille">⠲</span>.
+                </button>
+
+                <button class="btn btn-igual" onclick="calcular()">
+                    <span class="braille">⠿</span>=
+                </button>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
